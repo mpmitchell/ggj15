@@ -3,7 +3,6 @@ using System.Collections;
 
 public class EngineScript : ShipComponentScript
 {
-	// Use this for initialization
 	void Start ()
 	{
 		health = 100;
@@ -11,7 +10,6 @@ public class EngineScript : ShipComponentScript
 		Timer = 3.0f;
 	}
 	
-	// Update is called once per frame
 	void Update ()
 	{
 		if (isActive ==true)
