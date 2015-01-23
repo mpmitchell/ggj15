@@ -11,7 +11,6 @@ public class SlidingSlider : MonoBehaviour
 	public void Start()
 	{
 		slider_ = slider.GetComponent<Slider>();
-		//shipComponent = GetComponent<ShipComponentScript>();
 	}
 
 	public void Update()
