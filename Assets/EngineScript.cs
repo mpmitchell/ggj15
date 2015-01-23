@@ -32,6 +32,7 @@ public class EngineScript : ShipComponentScript {
 	}
 
 	public void Deactivate(){
+		Debug.Log ("Deactivated");
 		isActive = false;
 }
 }
