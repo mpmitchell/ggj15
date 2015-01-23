@@ -5,8 +5,7 @@ public class ShipComponentScript : MonoBehaviour {
 	
 	
 	public int health;
-	public static bool isActive;
-	public float StartTime;
+	public bool isActive;
 	public float Timer;
 	
 	// Use this for initialization
