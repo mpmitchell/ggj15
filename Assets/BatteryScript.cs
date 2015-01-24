@@ -8,7 +8,7 @@ public class BatteryScript : MonoBehaviour {
 	public static int power = 100;
 	public static bool charging = false;
 	private float timer = 2.0f;
-	private float drainedTimer = 5.0f;
+	private float drainedTimer = 15.0f;
 
 	public static bool activatedEngines = false;
 	public static bool activatedNavCore = false;
