@@ -10,11 +10,14 @@ public class PowerPercentage : MonoBehaviour {
 	public Sprite powerPercentx4;
 	public Sprite powerPercentx5;
 	public Sprite powerPercentx6;
+
+
 	public SpriteRenderer spriteRenderer;
 	// Use this for initialization
 	void Start () {
 
 		spriteRenderer = renderer as SpriteRenderer;
+
 	}
 	
 	// Update is called once per frame

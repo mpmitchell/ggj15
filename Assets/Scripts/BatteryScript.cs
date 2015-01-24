@@ -16,6 +16,7 @@ public class BatteryScript : MonoBehaviour {
 	public PowerPercentage percentageButton1;
 	public int percentageCounter;
 
+
 	public Text batteryText;
 
 	public static List<ShipComponentScript> components;
@@ -31,6 +32,7 @@ public class BatteryScript : MonoBehaviour {
 	void Start () {
 
 		spriteRenderer = renderer as SpriteRenderer;
+		percentageButton1 = GameObject.FindWithTag ("Percent").GetComponent<PowerPercentage> ();
 	}
 	
 	// Update is called once per frame
@@ -62,6 +64,40 @@ public class BatteryScript : MonoBehaviour {
 			power = 0;
 		}
 
+		if (power <100 && power >80)
+		    {
+			percentageButton1.spriteRenderer.sprite = percentageButton1.powerPercentx6;
+		}
+
+		if (power <=80 && power >60)
+		{
+			percentageButton1.spriteRenderer.sprite = percentageButton1.powerPercentx5;
+		}
+
+		if (power <=59 && power >40)
+		{
+			percentageButton1.spriteRenderer.sprite = percentageButton1.powerPercentx4;
+		}
+
+		if (power <=39 && power >20)
+		{
+			percentageButton1.spriteRenderer.sprite = percentageButton1.powerPercentx3;
+		}
+
+		if (power <=19 && power >10)
+		{
+			percentageButton1.spriteRenderer.sprite = percentageButton1.powerPercentx2;
+		}
+
+		if (power <=9 && power >0)
+		{
+			percentageButton1.spriteRenderer.sprite = percentageButton1.powerPercentx1;
+		}
+	
+		if (power <= 0) {
+			percentageButton1.spriteRenderer.sprite = percentageButton1.powerPercentx0;
+		
+		}
 		if (batteryText)
 			batteryText.text = "Battery Level: " + power + (charging ? "  (charging)" : "");
 	}
