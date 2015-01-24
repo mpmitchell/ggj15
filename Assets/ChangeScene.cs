@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ChangeScene : MonoBehaviour {
 
-	public void changeScene( string sceneToChangeTo ){
+	public void changeScene( int sceneToChangeTo ){
 		Application.LoadLevel (sceneToChangeTo);
 	}
 
