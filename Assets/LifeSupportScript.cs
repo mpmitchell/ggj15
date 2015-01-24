@@ -12,27 +12,39 @@ public class LifeSupportScript : ShipComponentScript {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if (isActive ==true)
-		{
-			
-			Timer-= Time.deltaTime;
-			if( Timer<=0)
+			if (isActive ==true)
 			{
-				health--;
+				
+				Timer-= Time.deltaTime;
+				if( Timer<=0)
+				{
+					BatteryScript.power+=-5;
+					Debug.Log (BatteryScript.power);
+					Debug.Log (health);
+					Timer=3.0f;
+				}
+				
+				
+			}
+		if (isActive == false) {
+						Timer -= Time.deltaTime;
+						if (Timer <= 0) {
+								health--;
 				Debug.Log (health);
 				Timer=3.0f;
-			}
-			
-		}
+						}
+				}
 	}
 	
 	public void Activate(){
+		BatteryScript.activatedLifeSupport = true;
+		BatteryScript.charging = false;
 		Debug.Log ("Working");
 		isActive = true;
 	}
 	
 	public void Deactivate(){
+		BatteryScript.activatedLifeSupport = false;
 		Debug.Log ("Deactivated");
 		isActive = false;
 	}

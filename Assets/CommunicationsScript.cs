@@ -19,20 +19,33 @@ public class CommunicationsScript : ShipComponentScript {
 			Timer-= Time.deltaTime;
 			if( Timer<=0)
 			{
-				health--;
+				BatteryScript.power+=-5;
+				Debug.Log (BatteryScript.power);
 				Debug.Log (health);
 				Timer=3.0f;
 			}
-			
+
+
 		}
+		if (isActive == false) {
+						Timer -= Time.deltaTime;
+						if (Timer <= 0) {
+								health--;
+				Debug.Log (health);
+				Timer=3.0f;
+						}
+				}
 	}
 	
 	public void Activate(){
+		BatteryScript.activatedLifeSupport = true;
+		BatteryScript.charging = false;
 		Debug.Log ("Working");
 		isActive = true;
 	}
 	
 	public void Deactivate(){
+		BatteryScript.activatedLifeSupport = false;
 		Debug.Log ("Deactivated");
 		isActive = false;
 	}
