@@ -54,9 +54,14 @@ public class BatteryScript : MonoBehaviour {
 				component.Deactivate();
 
 			power = 0;
+
+			Application.LoadLevel(Application.loadedLevel +1);
+
 		}
 
 		if (batteryText)
 			batteryText.text = "Battery Level: " + power + (charging ? "  (charging)" : "");
 	}
 }
+
+
