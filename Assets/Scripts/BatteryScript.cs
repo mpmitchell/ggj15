@@ -65,6 +65,7 @@ public class BatteryScript : MonoBehaviour {
 			power = 0;
 
 			drained = true;
+			Application.LoadLevel(Application.loadedLevel +1);
 		}
 
 		if (batteryText)
@@ -80,3 +81,5 @@ public class BatteryScript : MonoBehaviour {
 
 
 }
+
+

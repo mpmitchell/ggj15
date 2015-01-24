@@ -11,11 +11,8 @@ public class EngineScript : ShipComponentScript
 			Timer -= Time.deltaTime;
 			if (Timer <= 0)
 			{
-				BatteryScript.power--;
-				Timer = 0.5f;
-				if(health<100){
-				health++;
-				}
+				BatteryScript.power += -5;
+				Timer = 3.0f;
 			}
 		}
 		else
@@ -24,27 +21,18 @@ public class EngineScript : ShipComponentScript
 			if (Timer <= 0)
 			{
 				health--;
-				Timer=0.5f;
+				Timer=3.0f;
 			}
 		}
-
-		if (health <= 0) {
-						Debug.Log ("Game Over! Liam and Mathew have to change this part");
-				}
 	}
 
 	public void Activate()
 	{
-		if (BatteryScript.drained == false) {
-
-						BatteryScript.activatedEngines = true;
-						BatteryScript.charging = false;
-						isActive = true;
-						activateButton.SetActive (false);
-						deactivateButton.SetActive (true);
-				} else {
-						Debug.Log ("Battery is Drained. Please wait until madatory charging is completed");
-				}
+		BatteryScript.activatedEngines = true;
+		BatteryScript.charging = false;
+		isActive = true;
+		activateButton.SetActive(false);
+		deactivateButton.SetActive(true);
 	}
 
 	public override void Deactivate()
