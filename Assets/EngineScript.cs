@@ -14,25 +14,39 @@ public class EngineScript : ShipComponentScript {
 	
 	// Update is called once per frame
 	void Update () {
-	if (isActive ==true)
-		{
+				if (isActive == true) {
+			
+						Timer -= Time.deltaTime;
+						if (Timer <= 0) {
+								BatteryScript.power += -5;
+								Debug.Log (BatteryScript.power);
+								Debug.Log (health);
+								Timer = 3.0f;
+						}
+			
+			
+				}
 
-			Timer-= Time.deltaTime;
-			if( Timer<=0)
-			{
-				health--;
+				if (isActive == false) {
+						Timer -= Time.deltaTime;
+						if (Timer <= 0) {
+								health--;
 				Debug.Log (health);
 				Timer=3.0f;
-			}
-	}
-}
+						}
 
+
+				}
+		}
 	public void Activate(){
+			BatteryScript.activatedEngines = true;
+		BatteryScript.charging = false;
 		Debug.Log ("Working");
 		isActive = true;
 	}
 
 	public void Deactivate(){
+		BatteryScript.activatedEngines = false;
 		Debug.Log ("Deactivated");
 		isActive = false;
 }
