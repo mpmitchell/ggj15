@@ -12,7 +12,7 @@ public class EngineScript : ShipComponentScript
 			if (Timer <= 0)
 			{
 				BatteryScript.power += -5;
-				Timer = 3.0f;
+				Timer = 0.5f;
 			}
 		}
 		else
@@ -21,7 +21,7 @@ public class EngineScript : ShipComponentScript
 			if (Timer <= 0)
 			{
 				health--;
-				Timer=3.0f;
+				Timer=0.5f;
 			}
 		}
 	}

@@ -54,6 +54,11 @@ public class BatteryScript : MonoBehaviour {
 					power += 10;
 
 				}
+				if (power>100)
+				{
+					power=100;
+
+				}
 				timer = 2.0f;
 			}
 		}
