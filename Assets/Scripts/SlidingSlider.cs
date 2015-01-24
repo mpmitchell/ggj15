@@ -17,7 +17,7 @@ public class SlidingSlider : MonoBehaviour
 	public void Update()
 	{
 		if (slider_ && shipComponent)
-			slider_.value = shipComponent.health / 100.0f;
+			slider_.value = shipComponent.health / 50.0f;
 		if (shipComponent.health <= 30 && shipComponent.health >= 29.5f) {
 						PlayAudio ();
 				}
