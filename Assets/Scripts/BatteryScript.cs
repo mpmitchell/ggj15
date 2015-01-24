@@ -74,22 +74,22 @@ public class BatteryScript : MonoBehaviour {
 			percentageButton1.spriteRenderer.sprite = percentageButton1.powerPercentx5;
 		}
 
-		if (power <=59 && power >40)
+		if (power <=60 && power >40)
 		{
 			percentageButton1.spriteRenderer.sprite = percentageButton1.powerPercentx4;
 		}
 
-		if (power <=39 && power >20)
+		if (power <=40 && power >20)
 		{
 			percentageButton1.spriteRenderer.sprite = percentageButton1.powerPercentx3;
 		}
 
-		if (power <=19 && power >10)
+		if (power <=20 && power >10)
 		{
 			percentageButton1.spriteRenderer.sprite = percentageButton1.powerPercentx2;
 		}
 
-		if (power <=9 && power >0)
+		if (power <=10 && power >0)
 		{
 			percentageButton1.spriteRenderer.sprite = percentageButton1.powerPercentx1;
 		}
