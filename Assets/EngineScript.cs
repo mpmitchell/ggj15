@@ -28,11 +28,16 @@ public class EngineScript : ShipComponentScript
 
 	public void Activate()
 	{
-		BatteryScript.activatedEngines = true;
-		BatteryScript.charging = false;
-		isActive = true;
-		activateButton.SetActive(false);
-		deactivateButton.SetActive(true);
+		if (BatteryScript.drained == false) {
+
+						BatteryScript.activatedEngines = true;
+						BatteryScript.charging = false;
+						isActive = true;
+						activateButton.SetActive (false);
+						deactivateButton.SetActive (true);
+				} else {
+						Debug.Log ("Battery is Drained. Please wait until madatory charging is completed");
+				}
 	}
 
 	public override void Deactivate()
