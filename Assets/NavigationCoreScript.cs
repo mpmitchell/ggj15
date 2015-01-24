@@ -25,14 +25,22 @@ public class NavigationCoreScript : ShipComponentScript {
 								Timer=3.0f;
 						}
 				}
+		if (health <= 0) {
+			Debug.Log ("Game Over! Liam and Mathew have to change this part");
+		}
 }
 
 	public void Activate(){
-		BatteryScript.activatedNavCore = true;
-		BatteryScript.charging = false;
-		isActive = true;
-		activateButton.SetActive(false);
-		deactivateButton.SetActive(true);
+		if (BatteryScript.drained == false) {
+			
+			BatteryScript.activatedNavCore = true;
+			BatteryScript.charging = false;
+			isActive = true;
+			activateButton.SetActive (false);
+			deactivateButton.SetActive (true);
+		} else {
+			Debug.Log ("Battery is Drained. Please wait until madatory charging is completed");
+		}
 	}
 	
 	public override void Deactivate(){

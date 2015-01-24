@@ -24,6 +24,10 @@ public class EngineScript : ShipComponentScript
 				Timer=3.0f;
 			}
 		}
+
+		if (health <= 0) {
+						Debug.Log ("Game Over! Liam and Mathew have to change this part");
+				}
 	}
 
 	public void Activate()

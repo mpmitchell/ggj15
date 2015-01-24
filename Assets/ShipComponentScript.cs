@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ShipComponentScript : MonoBehaviour
 {	
-	public int health = 100;
+	public int health = 10;
 	public bool isActive = false;
 	public float Timer = 3.0f;
 
