@@ -13,10 +13,14 @@ public class BatteryScript : MonoBehaviour {
 	public static bool activatedNavCore = false;
 	public static bool activatedLifeSupport = false;
 	public static bool activatedCommunications = false;
+	public PowerPercentage percentageButton1;
+	public int percentageCounter;
 
 	public Text batteryText;
 
 	public static List<ShipComponentScript> components;
+
+	public SpriteRenderer spriteRenderer;
 
 	void Awake()
 	{
@@ -25,7 +29,8 @@ public class BatteryScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
+		spriteRenderer = renderer as SpriteRenderer;
 	}
 	
 	// Update is called once per frame
@@ -44,6 +49,7 @@ public class BatteryScript : MonoBehaviour {
 				if (power < 100)
 				{
 					power += 10;
+
 				}
 				timer = 2.0f;
 			}
@@ -59,4 +65,6 @@ public class BatteryScript : MonoBehaviour {
 		if (batteryText)
 			batteryText.text = "Battery Level: " + power + (charging ? "  (charging)" : "");
 	}
+
+
 }
