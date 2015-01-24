@@ -2,14 +2,6 @@
 using System.Collections;
 
 public class NavigationCoreScript : ShipComponentScript {
-
-	// Use this for initialization
-	void Start () {
-		health = 100;
-		isActive = false;
-		Timer = 3.0f;
-	
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,8 +13,6 @@ public class NavigationCoreScript : ShipComponentScript {
 			if( Timer<=0)
 			{
 				BatteryScript.power+=-5;
-				Debug.Log (BatteryScript.power);
-				Debug.Log (health);
 				Timer=3.0f;
 			}
 			
@@ -32,8 +22,7 @@ public class NavigationCoreScript : ShipComponentScript {
 						Timer -= Time.deltaTime;
 						if (Timer <= 0) {
 								health--;
-				Debug.Log (health);
-				Timer=3.0f;
+								Timer=3.0f;
 						}
 				}
 }
@@ -41,13 +30,15 @@ public class NavigationCoreScript : ShipComponentScript {
 	public void Activate(){
 		BatteryScript.activatedNavCore = true;
 		BatteryScript.charging = false;
-		Debug.Log ("Working");
 		isActive = true;
+		activateButton.SetActive(false);
+		deactivateButton.SetActive(true);
 	}
 	
-	public void Deactivate(){
+	public override void Deactivate(){
 		BatteryScript.activatedNavCore = false;
-		Debug.Log ("Deactivated");
 		isActive = false;
+		activateButton.SetActive(true);
+		deactivateButton.SetActive(false);
 	}
 }

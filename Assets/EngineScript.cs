@@ -3,15 +3,8 @@ using System.Collections;
 
 public class EngineScript : ShipComponentScript
 {
-	void Start ()
-	{
-		health = 100;
-		isActive = false;
-		Timer = 3.0f;
-	}
-
 	// Update is called once per frame
-	void Update ()
+	void Update()
 	{
 		if (isActive == true)
 		{
@@ -19,8 +12,6 @@ public class EngineScript : ShipComponentScript
 			if (Timer <= 0)
 			{
 				BatteryScript.power += -5;
-				Debug.Log (BatteryScript.power);
-				Debug.Log (health);
 				Timer = 3.0f;
 			}
 		}
@@ -30,7 +21,6 @@ public class EngineScript : ShipComponentScript
 			if (Timer <= 0)
 			{
 				health--;
-				Debug.Log (health);
 				Timer=3.0f;
 			}
 		}
@@ -40,14 +30,16 @@ public class EngineScript : ShipComponentScript
 	{
 		BatteryScript.activatedEngines = true;
 		BatteryScript.charging = false;
-		Debug.Log ("Working");
 		isActive = true;
+		activateButton.SetActive(false);
+		deactivateButton.SetActive(true);
 	}
 
-	public void Deactivate()
+	public override void Deactivate()
 	{
 		BatteryScript.activatedEngines = false;
-		Debug.Log ("Deactivated");
 		isActive = false;
+		activateButton.SetActive(true);
+		deactivateButton.SetActive(false);
 	}
 }
